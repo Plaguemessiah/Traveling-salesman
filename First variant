@@ -336,12 +336,14 @@ int main()
             }
             if (base > 0)
             {
-                super[ant[n-2]][ant[n-1]][1] = super[ant[n-2]][ant[n-1]][1] + ceil(base*100)/100;
-                super[ant[n-1]][ant[n-2]][1] = super[ant[n-1]][ant[n-2]][1] + ceil(base*100)/100;
-                for (int i = n-2; i >0; i--)
+                super[ant[n/2-1]][ant[n/2]][1] = super[ant[n/2-1]][ant[n/2]][1] + ceil(base*100)/100;
+                super[ant[n/2]][ant[n/2-1]][1] = super[ant[n/2]][ant[n/2-1]][1] + ceil(base*100)/100;
+                for (int i = 1; i < n/2; i++)
                 {
-                    super[ant[n-i]][ant[n-i-1]][1] = super[ant[n-i]][ant[n-i-1]][1] + ceil(pow(0.85, i)*base*100)/100;
-                    super[ant[n-i-1]][ant[n-i]][1] = super[ant[n-i-1]][ant[n-i]][1] + ceil(pow(0.85, i)*base*100)/100;
+                    super[ant[n/2-i-1]][ant[n/2-i]][1] = super[ant[n/2-i-1]][ant[n/2-i]][1] + ceil(pow(0.85, i)*base*100)/100;
+                    super[ant[n/2-i]][ant[n/2-i-1]][1] = super[ant[n/2-i]][ant[n/2-i-1]][1] + ceil(pow(0.85, i)*base*100)/100;
+                    super[ant[n/2+i-1]][ant[n/2+i]][1] = super[ant[n/2+i-1]][ant[n/2+i]][1] + ceil(pow(0.85, i)*base*100)/100;
+                    super[ant[n/2+i]][ant[n/2+i-1]][1] = super[ant[n/2+i-1]][ant[n/2+i]][1] + ceil(pow(0.85, i)*base*100)/100;
                 }
             }
         }//Если новая длина больше старой - Done
@@ -362,7 +364,7 @@ int main()
                 super[ant[n/2-i-1]][ant[n/2-i]][1] = super[ant[n/2-i-1]][ant[n/2-i]][1] + ceil(pow(0.85, i)*base*100)/100;
                 super[ant[n/2-i]][ant[n/2-i-1]][1] = super[ant[n/2-i]][ant[n/2-i-1]][1] + ceil(pow(0.85, i)*base*100)/100;
                 super[ant[n/2+i-1]][ant[n/2+i]][1] = super[ant[n/2+i-1]][ant[n/2+i]][1] + ceil(pow(0.85, i)*base*100)/100;
-                super[ant[n/2+i]][ant[n/2+i]][1] = super[ant[n/2+i+1]][ant[n/2+i]][1] + ceil(pow(0.85, i)*base*100)/100;
+                super[ant[n/2+i]][ant[n/2+i-1]][1] = super[ant[n/2+i]][ant[n/2+i-1]][1] + ceil(pow(0.85, i)*base*100)/100;
             }
         }//Если новая длина меньше старой - Done
         
