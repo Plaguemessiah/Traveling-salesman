@@ -465,6 +465,6 @@ for (int q = 0; q < 10; q++)
         cout << (antbest[i] + 1)<< "  ";
     }
     cout << "\n";
-    return 0;//Совсем конец - Done
 }
+    return 0;//Совсем конец - Done
 }
