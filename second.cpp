@@ -157,7 +157,7 @@ int main()
     }
     ant[0] = 0;
     antcopy[0] = 0;
-    lbest = round((lexp + lbest + lbest)/3);
+    lbest = round((lexp + lbest)/2);
     
     for (int final = 0; final < n*n*5000; final++)
     {
