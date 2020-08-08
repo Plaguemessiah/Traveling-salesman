@@ -329,7 +329,7 @@ int main()
         
         if (lamda > 1)
         {
-            double base = (n/10.0)*(n/10.0)*(pow((1/lamda), 10) - 0.15);
+            double base = (n/15.0)*(n/15.0)*(pow((1/lamda), 10) - 0.15);
             if (base < 0)
             {
                 base = 0;
@@ -356,7 +356,7 @@ int main()
             }
             lbest = l;
             
-            double base = (n/10.0)*(n/10.0)*pow((1/lamda), 2);
+            double base = (n/15.0)*(n/15.0)*pow((1/lamda), 2);
             super[ant[n/2-1]][ant[n/2]][1] = super[ant[n/2-1]][ant[n/2]][1] + ceil(base*100)/100;
             super[ant[n/2]][ant[n/2-1]][1] = super[ant[n/2]][ant[n/2-1]][1] + ceil(base*100)/100;
             for (int i = 1; i < n/2; i++)
