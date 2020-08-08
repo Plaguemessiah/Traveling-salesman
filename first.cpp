@@ -11,6 +11,8 @@ int main()
     cout << "\n";
     cin >> n;
     cout << "\n";
+for (int q = 0; q < 10; q++)
+{
     int town[n][2]; 
     town[0][0] = 0;
     town[0][1] = 0;
@@ -429,5 +431,6 @@ int main()
         cout << (antbest[i] + 1)<< "  ";
     }
     cout << "\n";
+}
     return 0;//Совсем конец - Done
 }
