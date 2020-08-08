@@ -157,10 +157,9 @@ int main()
     }
     ant[0] = 0;
     antcopy[0] = 0;
-    lbest = round((lexp + lbest)/2);
-    //lbest = lexp;
+    lbest = round((lexp + lbest + lbest)/3);
     
-    for (int final = 0; final < n*100000; final++)
+    for (int final = 0; final < n*n*5000; final++)
     {
         l = 0;
         for (int i = 0; i < n; i++)
@@ -355,7 +354,7 @@ int main()
                     if (flag == 1)
                     {
                         mu = count/n;
-                        base = (n*50)*pow((1/lamda), 1)*(exp(-pow((mu - 0.4), 2)/0.3)/10 - 0.06);
+                        base = n*n*5*pow((1/lamda), 1)*(exp(-pow((mu - 0.4), 2)/0.3)/10 - 0.06);
                         if (base < 0)
                         {
                             base = 0;
@@ -391,13 +390,15 @@ int main()
             }
             lbest = l;
             
-            double base = (n*50)*pow((1/lamda), 3);
-            super[ant[0]][ant[1]][1] = super[ant[0]][ant[1]][1] + base;
-            super[ant[1]][ant[0]][1] = super[ant[1]][ant[0]][1] + base;
-            for (int i = 1; i < n-1; i++)
+            double base = n*n*5*pow((1/lamda), 3);
+            super[ant[n/2-1]][ant[n/2]][1] = super[ant[n/2-1]][ant[n/2]][1] + ceil(base*100)/100;
+            super[ant[n/2]][ant[n/2-1]][1] = super[ant[n/2]][ant[n/2-1]][1] + ceil(base*100)/100;
+            for (int i = 1; i < n/2; i++)
             {
-                super[ant[i]][ant[i+1]][1] = super[ant[i]][ant[i+1]][1] + pow(0.8 + atan((n - 2)/50)/16, i)*base;
-                super[ant[i+1]][ant[i]][1] = super[ant[i+1]][ant[i]][1] + pow(0.8 + atan((n - 2)/50)/16, i)*base;
+                super[ant[n/2-i-1]][ant[n/2-i]][1] = super[ant[n/2-i-1]][ant[n/2-i]][1] + ceil(pow(0.85, i)*base*100)/100;
+                super[ant[n/2-i]][ant[n/2-i-1]][1] = super[ant[n/2-i]][ant[n/2-i-1]][1] + ceil(pow(0.85, i)*base*100)/100;
+                super[ant[n/2+i-1]][ant[n/2+i]][1] = super[ant[n/2+i-1]][ant[n/2+i]][1] + ceil(pow(0.85, i)*base*100)/100;
+                super[ant[n/2+i]][ant[n/2+i-1]][1] = super[ant[n/2+i]][ant[n/2+i-1]][1] + ceil(pow(0.85, i)*base*100)/100;
             }
         }//Если новая длина меньше старой - Done
         
@@ -453,6 +454,8 @@ int main()
         }
     }//Конец - Done
     
+    cout << "Результат муравьиного алгоритма:";
+    cout << "\n"; 
     cout << lbest;
     cout << "\n"; 
     for (int i = 0; i < n; i++)
