@@ -7,8 +7,6 @@ int main()
 {
     srand(static_cast<unsigned int>(time(0)));
     int n;
-    cout << "Введите число городов";
-    cout << "\n";
     cin >> n;
     cout << "\n";
 for (int q = 0; q < 10; q++)
@@ -107,16 +105,9 @@ for (int q = 0; q < 10; q++)
         }
     }//Находим кратчайший из жадных - Done
     
-    cout << "Кратчайший из жадных:";
-    cout << "\n";
     cout << lbest;
     cout << "\n"; 
-    for (int i = 0; i < n; i++)
-    {
-        cout << (antbest[i] + 1)<< "  ";
-    }
-    cout << "\n";
-    cout << "\n";//Ну и выводим всё нужное - Done
+    //Ну и выводим всё нужное - Done
     
     int next;
      for (int i = 1; i < n; i++)
@@ -389,16 +380,10 @@ for (int q = 0; q < 10; q++)
             }
         }
     }//Конец - Done
-    
-    cout << "Результат муравьиного алгоритма:";
-    cout << "\n"; 
+     
     cout << lbest;
     cout << "\n"; 
-    for (int i = 0; i < n; i++)
-    {
-        cout << (antbest[i] + 1)<< "  ";
-    }
-    cout << "\n";
 }
+    cout << "\n";
     return 0;//Совсем конец - Done
 }
