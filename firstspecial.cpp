@@ -310,10 +310,10 @@ for (int q = 0; q < 10; q++)
                 super[ant[n/2]][ant[n/2-1]][1] = super[ant[n/2]][ant[n/2-1]][1] + ceil(base*100)/100;
                 for (int i = 1; i < n/2; i++)
                 {
-                    super[ant[n/2-i-1]][ant[n/2-i]][1] = super[ant[n/2-i-1]][ant[n/2-i]][1] + ceil(pow(0.9, i)*base*100)/100;
-                    super[ant[n/2-i]][ant[n/2-i-1]][1] = super[ant[n/2-i]][ant[n/2-i-1]][1] + ceil(pow(0.9, i)*base*100)/100;
-                    super[ant[n/2+i-1]][ant[n/2+i]][1] = super[ant[n/2+i-1]][ant[n/2+i]][1] + ceil(pow(0.9, i)*base*100)/100;
-                    super[ant[n/2+i]][ant[n/2+i-1]][1] = super[ant[n/2+i-1]][ant[n/2+i]][1] + ceil(pow(0.9, i)*base*100)/100;
+                    super[ant[n/2-i-1]][ant[n/2-i]][1] = super[ant[n/2-i-1]][ant[n/2-i]][1] + ceil(pow(0.84 + atan((n+5)/50)/10, i)*base*100)/100;
+                    super[ant[n/2-i]][ant[n/2-i-1]][1] = super[ant[n/2-i]][ant[n/2-i-1]][1] + ceil(pow(0.84 + atan((n+5)/50)/10, i)*base*100)/100;
+                    super[ant[n/2+i-1]][ant[n/2+i]][1] = super[ant[n/2+i-1]][ant[n/2+i]][1] + ceil(pow(0.84 + atan((n+5)/50)/10, i)*base*100)/100;
+                    super[ant[n/2+i]][ant[n/2+i-1]][1] = super[ant[n/2+i-1]][ant[n/2+i]][1] + ceil(pow(0.84 + atan((n+5)/50)/10, i)*base*100)/100;
                 }
             }
         }//Если новая длина больше старой - Done
@@ -331,10 +331,10 @@ for (int q = 0; q < 10; q++)
             super[ant[n/2]][ant[n/2-1]][1] = super[ant[n/2]][ant[n/2-1]][1] + ceil(base*100)/100;
             for (int i = 1; i < n/2; i++)
             {
-                super[ant[n/2-i-1]][ant[n/2-i]][1] = super[ant[n/2-i-1]][ant[n/2-i]][1] + ceil(pow(0.9, i)*base*100)/100;
-                super[ant[n/2-i]][ant[n/2-i-1]][1] = super[ant[n/2-i]][ant[n/2-i-1]][1] + ceil(pow(0.9, i)*base*100)/100;
-                super[ant[n/2+i-1]][ant[n/2+i]][1] = super[ant[n/2+i-1]][ant[n/2+i]][1] + ceil(pow(0.9, i)*base*100)/100;
-                super[ant[n/2+i]][ant[n/2+i-1]][1] = super[ant[n/2+i]][ant[n/2+i-1]][1] + ceil(pow(0.9, i)*base*100)/100;
+                super[ant[n/2-i-1]][ant[n/2-i]][1] = super[ant[n/2-i-1]][ant[n/2-i]][1] + ceil(pow(0.84 + atan((n+5)/50)/10, i)*base*100)/100;
+                super[ant[n/2-i]][ant[n/2-i-1]][1] = super[ant[n/2-i]][ant[n/2-i-1]][1] + ceil(pow(0.84 + atan((n+5)/50)/10, i)*base*100)/100;
+                super[ant[n/2+i-1]][ant[n/2+i]][1] = super[ant[n/2+i-1]][ant[n/2+i]][1] + ceil(pow(0.84 + atan((n+5)/50)/10, i)*base*100)/100;
+                super[ant[n/2+i]][ant[n/2+i-1]][1] = super[ant[n/2+i]][ant[n/2+i-1]][1] + ceil(pow(0.84 + atan((n+5)/50)/10, i)*base*100)/100;
             }
         }//Если новая длина меньше старой - Done
         
