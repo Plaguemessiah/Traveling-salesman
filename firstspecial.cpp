@@ -105,8 +105,7 @@ for (int q = 0; q < 10; q++)
         }
     }//Находим кратчайший из жадных - Done
     
-    cout << lbest;
-    cout << "\n"; 
+    cout << lbest << "   "; 
     //Ну и выводим всё нужное - Done
     
     int next;
