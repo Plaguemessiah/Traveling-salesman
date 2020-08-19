@@ -116,6 +116,14 @@ for (int q = 0; q < 10; q++)
     ant[0] = 0;
     lbest = round((lexp + lbest)/2);
     //lbest = lexp;
+    double base = (n/10.0)*(n/10.0);
+    super[ant[n-1]][ant[0]][1] = super[ant[n-1]][ant[0]][1] + ceil(base*100)/100;
+    super[ant[0]][ant[n-1]][1] = super[ant[0]][ant[n-1]][1] + ceil(base*100)/100;
+    for (int i = 0; i < n-1; i++)
+    {
+        super[ant[i]][ant[i+1]][1] = super[ant[i]][ant[i+1]][1] + ceil(base*100)/100;
+        super[ant[i+1]][ant[i]][1] = super[ant[i+1]][ant[i]][1] + ceil(base*100)/100;
+    }
     
     for (int final = 0; final < n*n*5000; final++)
     {
