@@ -16,8 +16,8 @@ for (int q = 0; q < 10; q++)
     town[0][1] = 0;
     for (int i = 1; i < n; i++)
     {
-        town[i][0] = rand()%(n*10);
-        town[i][1] = rand()%(n*10);
+        town[i][0] = rand()%1000;
+        town[i][1] = rand()%1000;
     } // Заполняем таблицу координат - Done
 
     double map[n][n];
